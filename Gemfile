@@ -5,8 +5,11 @@ ruby '2.1.5'
 gem 'rails', '4.1.1'
 
 gem 'sorcery'
+gem 'pg'
+gem 'jbuilder'
+gem 'tire'
+gem 'kaminari'
 
-# Use sqlite3 as the database for Active Record
 group :development do
   gem 'spring'
   gem 'guard'
@@ -14,10 +17,6 @@ group :development do
   gem 'guard-rspec'
   gem 'rack-livereload'
   gem 'guard-livereload'
-end
-
-group :production do
-  gem 'pg'
 end
 
 group :development, :test do
@@ -34,14 +33,7 @@ group :test do
   gem 'fivemat'
 end
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
-
-# Use 'Phusion Passenger' as the app server
-gem 'passenger', group: :production
-
-gem 'rails_12factor', group: :production
-
-gem 'tire'
-
-gem 'kaminari'
+group :production do
+  gem 'passenger'
+  gem 'rails_12factor'
+end
